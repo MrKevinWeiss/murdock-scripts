@@ -46,6 +46,9 @@ def main(repodir, branch="master"):
             if c.match(line) is not None:
                 build["result"] = "passed"
                 break
+    build["robot"] = "pass"
+    if os.path.exists(os.path.join(branch_dir, "latest", "robot", "robot.fail")):
+        build["robot"] = "fail"
     build["since"] = time.mktime(datetime.datetime.now().timetuple())
     # add latest build on top
     nightly.insert(0, build)
