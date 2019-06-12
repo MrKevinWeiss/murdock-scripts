@@ -47,7 +47,7 @@ def main(repodir, branch="master"):
                 build["result"] = "passed"
                 break
     build["robot"] = "pass"
-    if os.path.exists(os.path.join(branch_dir, "latest", "robot", "robot.fail")):
+    if os.path.isfile(os.path.join(branch_dir, "latest", "robot", "robot.fail")):
         build["robot"] = "fail"
     build["since"] = time.mktime(datetime.datetime.now().timetuple())
     # add latest build on top
