@@ -39,3 +39,4 @@ RERROR=$?
   echo "Some robot tests failed!"
   echo "${RERROR}" > ${OUTDIR}/robot/robot.fail
 }
+${BASEDIR}/hil-xml.sh ${OUTDIR}/robot
