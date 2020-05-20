@@ -124,6 +124,8 @@ case "$ACTION" in
         get_jobs | dwqc \
             -E CI_BASE_REPO -E CI_BASE_BRANCH -E CI_PULL_REPO -E CI_PULL_COMMIT \
             -E CI_PULL_NR -E CI_PULL_URL -E CI_PULL_LABELS -E CI_MERGE_COMMIT \
+            -E CI_BASE_COMMIT \
+            --maxfail 500 \
             --quiet --report $REPORT_QUEUE --outfile result.json
 
         RES=$?

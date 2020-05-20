@@ -15,5 +15,8 @@ cd ${BASE_DIR}/RIOT
 git checkout -f ${COMMIT}
 cd ${BASE_DIR}
 BUILD_DIR=${BASE_DIR}/build/${COMMIT} PHILIP_PORT=/dev/ttyAMA0 make -C tests/periph_i2c/ flash robot-test
+BUILD_DIR=${BASE_DIR}/build/${COMMIT} PHILIP_PORT=/dev/ttyAMA0 make -C tests/periph_i2c/ robot-html
 BUILD_DIR=${BASE_DIR}/build/${COMMIT} PHILIP_PORT=/dev/ttyAMA0 make -C tests/periph_uart/ flash robot-test
+BUILD_DIR=${BASE_DIR}/build/${COMMIT} PHILIP_PORT=/dev/ttyAMA0 make -C tests/periph_uart/ robot-html
 BUILD_DIR=${BASE_DIR}/build/${COMMIT} PHILIP_PORT=/dev/ttyAMA0 make -C tests/xtimer_cli/ flash robot-test
+BUILD_DIR=${BASE_DIR}/build/${COMMIT} PHILIP_PORT=/dev/ttyAMA0 make -C tests/xtimer_cli/ robot-html

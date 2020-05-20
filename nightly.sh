@@ -31,7 +31,7 @@ main() {
         ln -s -f -T "$output_dir" "$latest_link" || true
         ln -s -f -T "$output_dir" "$output_dir_commit" || true
 
-	${BASEDIR}/hil.sh ${commit} ${output_dir}
+	${BASEDIR}/hil.sh ${output_dir} || true
  
 	# generate JSON so it can be fetched by the web frontend
         ${BASEDIR}/update_nightly_list.py ${REPO_DIR} ${branch}

@@ -38,7 +38,7 @@ post_build() {
 }
 
 get_jobs() {
-    dwqc -E CI_BASE_BRANCH -E NIGHTLY -E STATIC_TESTS -E APPS -E BOARDS './.murdock get_jobs'
+    dwqc -E CI_BASE_BRANCH -E CI_PULL_LABELS -E NIGHTLY -E STATIC_TESTS -E APPS -E BOARDS './.murdock get_jobs'
 }
 
 build() {
@@ -71,7 +71,7 @@ build() {
 
     get_jobs | dwqc \
         -E NIGHTLY \
-        --quiet --outfile result.json
+        --quiet --maxfail 500 --outfile result.json
 
     RES=$?
 
